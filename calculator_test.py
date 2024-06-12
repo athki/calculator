@@ -18,7 +18,7 @@ def test_input_equation(monkeypatch):
 
 ...
 def test_operation_invalid_operator(monkeypatch):
-    monkeypatch.setattr('builtins.input', lambda _: "1 / 1")
+    monkeypatch.setattr('builtins.input', lambda _: "1 / 0")
     calculator = Calculator()
     with pytest.raises(ZeroDivisionError):
         calculator.operation()
